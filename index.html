@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Latu Crunch – Cookies Homemade</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latu Crunch · Cookies Homemade</title>
   <style>
     /* ─── FONTS ─── */
     @font-face {
@@ -32,13 +32,13 @@
     }
 
     body {
-      font-family: 'Georgia', 'Times New Roman', serif;
+      font-family: Arial, Helvetica, sans-serif;  /* Font biasa seperti Arial */
       background-color: var(--cream);
       color: var(--text);
       overflow-x: hidden;
     }
 
-    /* ─── BACKGROUND ─── */
+    /* ─── BACKGROUND dengan tekstur & gradasi ─── */
     .bg-layer {
       position: fixed;
       inset: 0;
@@ -50,17 +50,19 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, rgba(253,246,238,.88) 0%, rgba(245,232,208,.82) 100%);
+        radial-gradient(circle at 20% 30%, rgba(253,246,238,.6) 0%, rgba(245,232,208,.4) 100%),
+        linear-gradient(145deg, rgba(255,250,240,.4) 0%, rgba(230,210,180,.2) 100%);
+      backdrop-filter: blur(1px);
     }
 
-    /* ─── GRAIN OVERLAY ─── */
+    /* ─── GRAIN OVERLAY (tekstur tambahan) ─── */
     .grain {
       position: fixed;
       inset: 0;
       z-index: -1;
-      opacity: .045;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 180px;
+      opacity: .06;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
       pointer-events: none;
     }
 
@@ -80,9 +82,10 @@
     }
     header.scrolled { background: rgba(253,246,238,.96); }
     .nav-logo {
-      height: 54px;
+      height: 58px;          /* diperjelas */
       width: auto;
       object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.05));
     }
     nav {
       margin-left: auto;
@@ -90,7 +93,7 @@
       gap: 32px;
     }
     nav a {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .85rem;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -140,7 +143,7 @@
     }
     .mobile-nav.open { display: flex; }
     .mobile-nav a {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .9rem;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -179,7 +182,7 @@
     .hero-welcome {
       font-family: 'LuckiestGuy', cursive;
       font-size: clamp(2rem, 5vw, 3.8rem);
-      letter-spacing: .18em;
+      letter-spacing: .16em;
       color: var(--brown);
       margin-bottom: 4px;
       text-shadow: 0 2px 18px rgba(139,94,60,.15);
@@ -194,7 +197,7 @@
     }
     .hero-sub {
       margin-top: 24px;
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: clamp(.95rem, 2vw, 1.15rem);
       letter-spacing: .14em;
       color: var(--muted);
@@ -207,7 +210,7 @@
       background: var(--brown);
       color: var(--cream);
       text-decoration: none;
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .85rem;
       letter-spacing: .18em;
       text-transform: uppercase;
@@ -233,7 +236,7 @@
       animation: bounce 2s infinite;
     }
     .scroll-hint span {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .7rem;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -257,7 +260,7 @@
       text-align: center;
     }
     .section-label {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .72rem;
       letter-spacing: .28em;
       text-transform: uppercase;
@@ -272,7 +275,7 @@
       margin-bottom: 18px;
     }
     #about p {
-      font-family: 'Georgia', serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 1.05rem;
       line-height: 1.9;
       color: var(--text);
@@ -325,7 +328,7 @@
       text-align: left;
     }
     .product-tag {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .68rem;
       letter-spacing: .2em;
       text-transform: uppercase;
@@ -333,6 +336,7 @@
       margin-bottom: 6px;
     }
     .product-name {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 1.1rem;
       color: var(--dark);
       font-weight: normal;
@@ -368,14 +372,15 @@
       display: block;
     }
     .brand-card h3 {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 1.05rem;
       color: var(--dark);
-      font-weight: normal;
+      font-weight: bold;
       margin-bottom: 10px;
       letter-spacing: .03em;
     }
     .brand-card p {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .88rem;
       color: var(--muted);
       line-height: 1.7;
@@ -425,13 +430,14 @@
     }
     .contact-card:hover .contact-icon { background: var(--accent); color: #fff; }
     .contact-label {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .72rem;
       letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--accent);
     }
     .contact-value {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .9rem;
       color: var(--text);
       word-break: break-word;
@@ -458,7 +464,7 @@
       background: rgba(255,255,255,.88);
     }
     .map-link .addr-label {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .72rem;
       letter-spacing: .18em;
       text-transform: uppercase;
@@ -467,12 +473,13 @@
       display: block;
     }
     .map-link .addr-text {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
       color: var(--dark);
     }
     .map-link .addr-cta {
       margin-top: 14px;
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .78rem;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -492,14 +499,15 @@
       z-index: 1;
     }
     .footer-logo {
-      height: 56px;
+      height: 62px;          /* lebih jelas */
       width: auto;
       object-fit: contain;
       margin-bottom: 20px;
-      opacity: .85;
+      opacity: .9;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,.05));
     }
     .footer-brand {
-      font-family: sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: .12em;
@@ -508,7 +516,7 @@
     }
     .footer-tagline {
       margin-top: 8px;
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .8rem;
       letter-spacing: .16em;
       text-transform: uppercase;
@@ -522,7 +530,7 @@
       opacity: .5;
     }
     .footer-copy {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: .75rem;
       color: var(--muted);
       letter-spacing: .08em;
@@ -554,12 +562,13 @@
       .deco-tr, .deco-bl { display: none; }
       .deco-tl { width: 130px; opacity: .09; }
       .deco-br { width: 140px; opacity: .09; }
+      .nav-logo { height: 48px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- BG -->
+  <!-- BG + gradasi / tekstur -->
   <div class="bg-layer"></div>
   <div class="grain"></div>
 
@@ -569,7 +578,7 @@
   <img class="deco deco-bl" src="Original.png"   alt="" aria-hidden="true">
   <img class="deco deco-br" src="Redvelvelt.png" alt="" aria-hidden="true">
 
-  <!-- HEADER -->
+  <!-- HEADER (logo kiri atas) -->
   <header id="header">
     <img class="nav-logo" src="LGTRSPN.png" alt="Latu Crunch Logo">
     <nav>
@@ -591,10 +600,10 @@
     <a href="#contact"  onclick="closeMobileNav()">Contact</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO : "WELCOME TO" di atas, "LATU CRUNCH" di bawah -->
   <section id="hero">
     <div class="hero-inner">
-      <p class="hero-welcome">WELCOME</p>
+      <p class="hero-welcome">WELCOME TO</p>
       <h1 class="hero-brand">LATU CRUNCH</h1>
       <p class="hero-sub">Cookies Homemade Selera Anda dirumah</p>
       <a href="#products" class="hero-cta">Lihat Produk</a>
@@ -655,8 +664,7 @@
       </div>
       <div class="product-card reveal" style="transition-delay:.3s">
         <div class="product-img-wrap">
-          <img class="product-img" src="Img/G3.jpg" alt="Cookies 3"
->
+          <img class="product-img" src="Img/G3.jpg" alt="Cookies 3">
         </div>
         <div class="product-info">
           <p class="product-tag">Homemade Quality</p>
@@ -675,11 +683,11 @@
     </div>
   </section>
 
-  <!-- BRANDING -->
+  <!-- BRANDING (judul diubah) -->
   <section id="branding">
     <div class="reveal">
-      <p class="section-label">Mengapa Latu Crunch</p>
-      <h2 class="section-title">Kualitas yang Bisa Dirasakan</h2>
+      <p class="section-label">Mengapa Memilih Latu Crunch</p>
+      <h2 class="section-title">Mengapa Memilih Latu Crunch</h2>
       <div class="divider"></div>
     </div>
     <div class="brand-grid">
@@ -701,11 +709,11 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT (judul: Contact With Us ✨) -->
   <section id="contact">
     <div class="reveal">
       <p class="section-label">Hubungi Kami</p>
-      <h2 class="section-title">Connect With Us</h2>
+      <h2 class="section-title">Contact With Us ✨</h2>
       <div class="divider"></div>
     </div>
     <div class="contact-grid" style="margin-top:52px;">
